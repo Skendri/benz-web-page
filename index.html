@@ -63,22 +63,32 @@
 
     <section id="second-section">
       <div class="container">
+        <!-- This is a first block car element -->
         <div class="border-position">
+          <!-- Text animations here -->
+          <div class="text">
+            <p>
+              What are G class <br />
+              thinking about?
+            </p>
+          </div>
+
           <div class="border">
-            <div class="text">
-              <p></p>
-            </div>
             <img
             src=https://s1.cdn.autoevolution.com/images/models/MERCEDES-BENZ_G-Class-2024_main.jpg
             alt="benci" />
           </div>
         </div>
 
+        <!-- This is a second block car element -->
         <div class="border-position2">
+          <!-- Text animations here -->
+          <div class="console-container">
+            <span id="text"></span>
+            <div class="console-underscore" id="console">&#95;</div>
+          </div>
+
           <div class="border2">
-            <div class="text">
-              <p></p>
-            </div>
             <img
               src="https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/g-class/electric-g-class/home-stage/04-2024/images/mercedes-benz-g-class-electric-home-stage-3840x2160-04-2024.jpg/_jcr_content/renditions/image-crop-default.jpeg/1730311388329.jpg?im=Resize=(1280);Crop,rect=(0,0,1280,720)"
               alt="g-class"
@@ -86,15 +96,88 @@
           </div>
         </div>
 
+        <!-- This is a third block car element -->
         <div class="border-position3">
-          <div class="border3">
-            <div class="text">
-              <p></p>
+          <!-- Text animations here -->
+          <div class="wrapper">
+            <div class="deconstructed">
+              IMAGINATION
+              <div>IMAGINATION</div>
+              <div>IMAGINATION</div>
+              <div>IMAGINATION</div>
+              <div>IMAGINATION</div>
             </div>
-            <img src="" alt="" />
+          </div>
+
+          <div class="border3">
+            <img
+              src="https://ev-database.org/img/auto/Mercedes_G-Class/Mercedes_G-Class-01@2x.jpg"
+              alt="benci"
+            />
           </div>
         </div>
       </div>
     </section>
+    <!-- end of carl block element -->
+
+    <script>
+      // This is the JavaScript code for the typing effect
+
+      // function([string1, string2],target id,[color1,color2])
+
+      consoleText(
+        ["Class of Creators.", "Because it's Mercedez-Benz", "Made with Love."],
+        "text",
+        ["tomato", "rebeccapurple", "lightblue"]
+      );
+
+      function consoleText(words, id, colors) {
+        if (colors === undefined) colors = ["#fff"];
+        var visible = true;
+        var con = document.getElementById("console");
+        var letterCount = 1;
+        var x = 1;
+        var waiting = false;
+        var target = document.getElementById(id);
+        target.setAttribute("style", "color:" + colors[0]);
+        window.setInterval(function () {
+          if (letterCount === 0 && waiting === false) {
+            waiting = true;
+            target.innerHTML = words[0].substring(0, letterCount);
+            window.setTimeout(function () {
+              var usedColor = colors.shift();
+              colors.push(usedColor);
+              var usedWord = words.shift();
+              words.push(usedWord);
+              x = 1;
+              target.setAttribute("style", "color:" + colors[0]);
+              letterCount += x;
+              waiting = false;
+            }, 1000);
+          } else if (letterCount === words[0].length + 1 && waiting === false) {
+            waiting = true;
+            window.setTimeout(function () {
+              x = -1;
+              letterCount += x;
+              waiting = false;
+            }, 1000);
+          } else if (waiting === false) {
+            target.innerHTML = words[0].substring(0, letterCount);
+            letterCount += x;
+          }
+        }, 120);
+        window.setInterval(function () {
+          if (visible === true) {
+            con.className = "console-underscore hidden";
+            visible = false;
+          } else {
+            con.className = "console-underscore";
+
+            visible = true;
+          }
+        }, 400);
+      }
+      // This is the JavaScript code for the typing effect
+    </script>
   </body>
 </html>

@@ -351,10 +351,10 @@ header span {
 
 #second-section{
   width: 100%;
-  height: 750px;
+  height: auto;
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: rgb(34, 34, 34);
 }
 
 
@@ -367,14 +367,57 @@ header span {
   gap: 10px;
 }
 
-
+/* first car and text element */
 .border-position{
   display: flex;
   width: 100%;
   height: 50%;
   justify-content: start;
+  flex-direction: row-reverse;
 }
 
+/* styles for text animation border 2 */
+.border-position .text {
+	font-family: "Cairo";
+	text-align: center;
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	letter-spacing: 1px;
+	line-height:2
+}
+
+.border-position p {
+	background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 50px;
+	margin-right: 20px;
+}
+
+.border{
+  width: 60%;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  margin: 20px;
+  /* border: 3px solid blue; */
+}
+
+.border img {
+  width: 95%;
+  height: 85%;
+}
+
+ /* first car and text element */
+
+/* second car and text element */
 .border-position2{
   display: flex;
   width: 100%;
@@ -382,50 +425,189 @@ header span {
   justify-content: end;
 }
 
-
-.border-position3{
-  display: flex;
-  width: 100%;
-  height: 50%;
-  justify-content: start;
+/* styles for text animation border 2 */
+.hidden {
+  opacity:0;
 }
-
-
-.border{
-  width: 60%;
-  height: auto;
-  padding: 10px;
-  display: flex;
-  border: 3px solid blue;
+.console-container {
+  font-family:Khula;
+  font-size:4em;
+  text-align:center;
+  height:200px;
+  width:600px;
+  display:block;
+  /* position:absolute; */
+  color:white;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
 }
-
-.border img {
-  width: 100%;
+.console-underscore {
+   display:inline-block;
+  position:relative;
+  top:-0.14em;
+  left:10px;
 }
 
 
 .border2{
   width: 60%;
   height: auto;
-  padding: 10px;
+  padding: 20px;
+  margin: 20px;
   display: flex;
   justify-content: end;
-  border: 3px solid springgreen;
+  /* border: 3px solid springgreen; */
 }
 
 .border2 img {
   width: 100%;
 }
+/* second car and text element */
 
 
-.border3{
+/* third car and text element */
+.border-position3 {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  justify-content: start;
+  flex-direction: row-reverse;
+}
+
+/* styles for text animation border 3 */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100%;
+  background-color: black;
+  overflow: hidden;
+}
+
+.deconstructed {
+  position: relative;
+  margin: auto;
+  height: 0.71em;
+  color: transparent;
+  font-family: 'Cambay', sans-serif;
+  font-size: 10vw;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.03em;
+}
+
+.deconstructed > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #ffff64;
+  pointer-events: none;
+}
+
+.deconstructed > div:nth-child(1) {
+  -webkit-mask-image: linear-gradient(black 25%, transparent 25%);
+  mask-image: linear-gradient(black 25%, transparent 25%);
+  animation: deconstructed1 5s infinite;
+}
+
+.deconstructed > div:nth-child(2) {
+  -webkit-mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+  mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+  animation: deconstructed2 5s infinite;
+}
+
+.deconstructed > div:nth-child(3) {
+   -webkit-mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
+  mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
+  animation: deconstructed3 5s infinite;
+}
+
+.deconstructed > div:nth-child(4) {
+   -webkit-mask-image: linear-gradient(transparent 75%, black 75%);
+  mask-image: linear-gradient(transparent 75%, black 75%);
+  animation: deconstructed4 5s infinite;
+}
+
+@keyframes deconstructed1 {
+  0% {
+    transform: translateX(100%);
+  }
+  26% {
+    transform: translateX(0%);
+  }
+  83% {
+    transform: translateX(-0.1%);
+  }
+  100% {
+    transform: translateX(-120%);
+  }
+}
+
+@keyframes deconstructed2 {
+  0% {
+    transform: translateX(100%);
+  }
+  24% {
+    transform: translateX(0.5%);
+  }
+  82% {
+    transform: translateX(-0.2%);
+  }
+  100% {
+    transform: translateX(-125%);
+  }
+}
+
+@keyframes deconstructed3 {
+  0% {
+    transform: translateX(100%);
+  }
+  22% {
+    transform: translateX(0%);
+  }
+  81% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-130%);
+  }
+}
+
+@keyframes deconstructed4 {
+  0% {
+    transform: translateX(100%);
+  }
+  20% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-135%);
+  }
+}
+
+.border3 {
   width: 70%;
   height: 90%;
-  padding: 10px;
+  padding: 20px;
+  margin: 20px;
   display: flex;
   justify-content: start;
   border: 3px solid aqua;
 }
+
+.border3 img {
+  width: 100%;
+}
+/* third car and text element */
 
 
 /*                      Second Section         */
