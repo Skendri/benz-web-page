@@ -284,36 +284,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Interactive Highlight Points with Info Panels
+  // Initialize highlight points
   const highlightPoints = document.querySelectorAll('.highlight');
   highlightPoints.forEach(point => {
     const infoPanel = point.querySelector('.highlight-info');
+    const dot = point.querySelector('.highlight-dot');
 
+    // Initialize GSAP animation for the dot
+    gsap.from(dot, {
+      scale: 0,
+      opacity: 0,
+      duration: 0.5,
+      ease: "back.out(1.7)"
+    });
+
+    // Mouse enter animation
     point.addEventListener('mouseenter', () => {
-      gsap.to(point.querySelector('.highlight-dot'), {
-        scale: 1.5,
+      gsap.to(dot, {
+        scale: 1.2,
         duration: 0.3,
         ease: "power2.out"
       });
 
       gsap.to(infoPanel, {
-        scale: 1.1,
         opacity: 1,
+        y: -10,
         duration: 0.3,
         ease: "power2.out"
       });
     });
 
+    // Mouse leave animation
     point.addEventListener('mouseleave', () => {
-      gsap.to(point.querySelector('.highlight-dot'), {
+      gsap.to(dot, {
         scale: 1,
         duration: 0.3,
         ease: "power2.out"
       });
 
       gsap.to(infoPanel, {
-        scale: 1,
-        opacity: 0.8,
+        opacity: 0,
+        y: 0,
         duration: 0.3,
         ease: "power2.out"
       });
