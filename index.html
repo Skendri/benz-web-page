@@ -77,6 +77,16 @@
             <img
             src=https://s1.cdn.autoevolution.com/images/models/MERCEDES-BENZ_G-Class-2024_main.jpg
             alt="benci" />
+            <div class="car-info">
+              <h3>Mercedes-Benz G-Class 2024</h3>
+              <p>Starting at $139,900</p>
+              <ul>
+                <li>4.0L V8 Biturbo</li>
+                <li>416 HP</li>
+                <li>450 lb-ft torque</li>
+              </ul>
+              <button class="learn-more">Learn More</button>
+            </div>
           </div>
         </div>
 
@@ -93,6 +103,16 @@
               src="https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/g-class/electric-g-class/home-stage/04-2024/images/mercedes-benz-g-class-electric-home-stage-3840x2160-04-2024.jpg/_jcr_content/renditions/image-crop-default.jpeg/1730311388329.jpg?im=Resize=(1280);Crop,rect=(0,0,1280,720)"
               alt="g-class"
             />
+            <div class="car-info">
+              <h3>Mercedes-Benz EQG</h3>
+              <p>Electric G-Class</p>
+              <ul>
+                <li>Quad Motor AWD</li>
+                <li>600+ HP</li>
+                <li>500+ miles range</li>
+              </ul>
+              <button class="learn-more">Learn More</button>
+            </div>
           </div>
         </div>
 
@@ -114,70 +134,22 @@
               src="https://ev-database.org/img/auto/Mercedes_G-Class/Mercedes_G-Class-01@2x.jpg"
               alt="benci"
             />
+            <div class="car-info">
+              <h3>Mercedes-AMG G63</h3>
+              <p>High-Performance Edition</p>
+              <ul>
+                <li>4.0L V8 Biturbo</li>
+                <li>577 HP</li>
+                <li>627 lb-ft torque</li>
+              </ul>
+              <button class="learn-more">Learn More</button>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <!-- end of carl block element -->
 
-    <script>
-      // This is the JavaScript code for the typing effect
-
-      // function([string1, string2],target id,[color1,color2])
-
-      consoleText(
-        ["Class of Creators.", "Because it's Mercedez-Benz", "Made with Love."],
-        "text",
-        ["tomato", "rebeccapurple", "lightblue"]
-      );
-
-      function consoleText(words, id, colors) {
-        if (colors === undefined) colors = ["#fff"];
-        var visible = true;
-        var con = document.getElementById("console");
-        var letterCount = 1;
-        var x = 1;
-        var waiting = false;
-        var target = document.getElementById(id);
-        target.setAttribute("style", "color:" + colors[0]);
-        window.setInterval(function () {
-          if (letterCount === 0 && waiting === false) {
-            waiting = true;
-            target.innerHTML = words[0].substring(0, letterCount);
-            window.setTimeout(function () {
-              var usedColor = colors.shift();
-              colors.push(usedColor);
-              var usedWord = words.shift();
-              words.push(usedWord);
-              x = 1;
-              target.setAttribute("style", "color:" + colors[0]);
-              letterCount += x;
-              waiting = false;
-            }, 1000);
-          } else if (letterCount === words[0].length + 1 && waiting === false) {
-            waiting = true;
-            window.setTimeout(function () {
-              x = -1;
-              letterCount += x;
-              waiting = false;
-            }, 1000);
-          } else if (waiting === false) {
-            target.innerHTML = words[0].substring(0, letterCount);
-            letterCount += x;
-          }
-        }, 120);
-        window.setInterval(function () {
-          if (visible === true) {
-            con.className = "console-underscore hidden";
-            visible = false;
-          } else {
-            con.className = "console-underscore";
-
-            visible = true;
-          }
-        }, 400);
-      }
-      // This is the JavaScript code for the typing effect
-    </script>
+    <script src="./index.js"></script>
   </body>
 </html>
