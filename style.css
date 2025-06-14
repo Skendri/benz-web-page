@@ -1172,3 +1172,337 @@ header span {
       -0.025em -0.05em 0 #0000ff;
   }
 }
+
+/* Experience Section Styles */
+#experience-section {
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  padding: 100px 0;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Animated Header */
+.experience-header {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.animated-title {
+  font-size: 64px;
+  color: #fff;
+  font-family: 'Zain', sans-serif;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
+}
+
+.animated-subtitle {
+  font-size: 24px;
+  color: #888;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s 0.3s forwards;
+}
+
+/* Floating Cards */
+.floating-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.card-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #888;
+  font-size: 16px;
+}
+
+.card-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Timeline */
+.timeline-container {
+  margin: 100px 0;
+  position: relative;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 40px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.timeline-item[data-scroll="in"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+  transform: translateY(-10px);
+}
+
+.timeline-content h4 {
+  color: #ff0000;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  color: #fff;
+  font-size: 16px;
+}
+
+/* 3D Car Showcase */
+.car-showcase {
+  margin: 100px 0;
+  position: relative;
+}
+
+.car-3d-container {
+  perspective: 1000px;
+  margin-bottom: 40px;
+}
+
+.car-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.car-3d-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+.car-reflection {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotateX(60deg);
+  filter: blur(10px);
+}
+
+.car-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.spec-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.spec-item[data-scroll="in"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.spec-value {
+  font-size: 48px;
+  color: #ff0000;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.spec-label {
+  color: #888;
+  font-size: 18px;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.feature-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.feature-content {
+  position: relative;
+  z-index: 2;
+}
+
+.feature-icon {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.feature-content h3 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.feature-content p {
+  color: #888;
+  font-size: 16px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .animated-title {
+    font-size: 48px;
+  }
+
+  .animated-subtitle {
+    font-size: 20px;
+  }
+
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .timeline::before {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  .car-specs {
+    grid-template-columns: 1fr;
+  }
+}

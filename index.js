@@ -57,17 +57,18 @@ function consoleText(words, id, colors) {
 
 // Initialize all animations when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize ScrollOut with modified settings
-  if (typeof ScrollOut !== 'undefined') {
-    ScrollOut({
-      threshold: 0.1,
-      once: false,
-      cssProps: {
-        visibleY: true,
-        viewportY: true
-      }
-    });
-  }
+  // Initialize ScrollOut
+  ScrollOut({
+    threshold: 0.2,
+    once: false,
+    cssProps: {
+      visibleY: true,
+      viewportY: true
+    }
+  });
+
+  // Initialize GSAP ScrollTrigger
+  gsap.registerPlugin(ScrollTrigger);
 
   // Performance Section Initialization
   const performanceSection = document.querySelector('#performance-section');
@@ -415,5 +416,181 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "power2.out"
     });
   });
+
+  // Experience Section Animations
+  const initExperienceSection = () => {
+    // Floating Cards Animation
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, index) => {
+      // Create particles
+      const particleContainer = card.querySelector('.card-particles');
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.animationDelay = `${Math.random() * 2}s`;
+        particleContainer.appendChild(particle);
+      }
+
+      // Hover animation
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+          y: -20,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+
+        // Animate particles
+        gsap.to(card.querySelectorAll('.particle'), {
+          scale: 1.5,
+          opacity: 0.8,
+          duration: 0.5,
+          stagger: 0.02,
+          ease: "power2.out"
+        });
+      });
+
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+
+        // Reset particles
+        gsap.to(card.querySelectorAll('.particle'), {
+          scale: 1,
+          opacity: 0.2,
+          duration: 0.5,
+          stagger: 0.02,
+          ease: "power2.out"
+        });
+      });
+    });
+
+    // Timeline Animation
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    timelineItems.forEach((item, index) => {
+      // Set initial state
+      gsap.set(item, {
+        opacity: 0,
+        y: 50
+      });
+
+      // Create animation
+      gsap.to(item, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: index * 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: item,
+          start: "top center+=100",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+
+    // 3D Car Animation
+    const car3D = document.querySelector('.car-3d');
+    let isDragging = false;
+    let startX, startY;
+    let currentRotationX = 0;
+    let currentRotationY = 0;
+
+    car3D.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+
+      const deltaX = e.clientX - startX;
+      const deltaY = e.clientY - startY;
+
+      currentRotationY += deltaX * 0.5;
+      currentRotationX -= deltaY * 0.5;
+
+      gsap.to(car3D, {
+        rotationY: currentRotationY,
+        rotationX: currentRotationX,
+        duration: 0.1,
+        ease: "none"
+      });
+
+      startX = e.clientX;
+      startY = e.clientY;
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    // Car Specs Animation
+    const specItems = document.querySelectorAll('.spec-item');
+    specItems.forEach((item, index) => {
+      const value = item.querySelector('.spec-value');
+      if (!value) return; // Skip if element doesn't exist
+
+      const targetValue = parseInt(value.textContent || '0');
+      if (isNaN(targetValue)) return; // Skip if value is not a valid number
+
+      gsap.from(value, {
+        scrollTrigger: {
+          trigger: item,
+          start: "top center",
+          toggleActions: "play none none reverse"
+        },
+        innerText: 0,
+        duration: 2,
+        snap: { innerText: 1 },
+        ease: "power2.out",
+        delay: index * 0.2
+      });
+    });
+
+    // Features Grid Animation
+    const featureBoxes = document.querySelectorAll('.feature-box');
+    featureBoxes.forEach((box, index) => {
+      gsap.from(box, {
+        scrollTrigger: {
+          trigger: box,
+          start: "top center",
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        delay: index * 0.2,
+        ease: "power2.out"
+      });
+
+      // Hover animation
+      box.addEventListener('mouseenter', () => {
+        gsap.to(box, {
+          y: -10,
+          scale: 1.05,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+
+      box.addEventListener('mouseleave', () => {
+        gsap.to(box, {
+          y: 0,
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+    });
+  };
+
+  // Initialize Experience Section
+  initExperienceSection();
 });
 // This is the JavaScript code for the typing effect

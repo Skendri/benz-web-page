@@ -11,6 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Dhurjati&family=Pacifico&family=Roboto+Condensed:wght@200&family=Zain:wght@200;300;400;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <!-- Add GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Add ScrollOut -->
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
   </head>
 
   <body>
@@ -384,6 +389,130 @@
                   <p>Maximum Stopping Power</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section with Advanced Animations -->
+    <section id="experience-section">
+      <div class="experience-container">
+        <div class="experience-header">
+          <h2 class="animated-title">Experience Excellence</h2>
+          <p class="animated-subtitle">Where Innovation Meets Luxury</p>
+        </div>
+
+        <!-- Floating Cards -->
+        <div class="floating-cards">
+          <div class="card" data-card="luxury">
+            <div class="card-content">
+              <div class="card-icon">✨</div>
+              <h3>Luxury</h3>
+              <p>Unparalleled comfort and elegance</p>
+            </div>
+            <div class="card-particles"></div>
+          </div>
+          <div class="card" data-card="performance">
+            <div class="card-content">
+              <div class="card-icon">⚡</div>
+              <h3>Performance</h3>
+              <p>Heart-pounding acceleration</p>
+            </div>
+            <div class="card-particles"></div>
+          </div>
+          <div class="card" data-card="technology">
+            <div class="card-content">
+              <div class="card-icon">🚀</div>
+              <h3>Technology</h3>
+              <p>Cutting-edge innovation</p>
+            </div>
+            <div class="card-particles"></div>
+          </div>
+        </div>
+
+        <!-- Interactive Timeline -->
+        <div class="timeline-container">
+          <div class="timeline">
+            <div class="timeline-item" data-year="1886">
+              <div class="timeline-content">
+                <h4>1886</h4>
+                <p>The Birth of Mercedes-Benz</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-year="1954">
+              <div class="timeline-content">
+                <h4>1954</h4>
+                <p>300 SL Gullwing</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-year="2014">
+              <div class="timeline-content">
+                <h4>2014</h4>
+                <p>AMG GT Launch</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-year="2024">
+              <div class="timeline-content">
+                <h4>2024</h4>
+                <p>Electric Future</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Car Showcase -->
+        <div class="car-showcase">
+          <div class="car-3d-container">
+            <div class="car-3d">
+              <img src="https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/world-of-g-class/grid/08-2024/images/mercedes-benz-brandhub-g-hub-teaser-grid-04-2560x1440-08-2024.jpg/_jcr_content/renditions/image-crop-default.jpeg/1730311688546.jpg?im=Resize=(1280);Crop,rect=(0,0,1280,720)" alt="3D Car" class="car-3d-image">
+              <div class="car-reflection"></div>
+            </div>
+          </div>
+          <div class="car-specs">
+            <div class="spec-item" data-spec="speed">
+              <div class="spec-value">320</div>
+              <div class="spec-label">Top Speed</div>
+            </div>
+            <div class="spec-item" data-spec="power">
+              <div class="spec-value">831</div>
+              <div class="spec-label">Horsepower</div>
+            </div>
+            <div class="spec-item" data-spec="acceleration">
+              <div class="spec-value">2.9</div>
+              <div class="spec-label">0-100 km/h</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Features Grid -->
+        <div class="features-grid">
+          <div class="feature-box" data-feature="safety">
+            <div class="feature-content">
+              <h3>Safety First</h3>
+              <p>Advanced driver assistance systems</p>
+              <div class="feature-icon">🛡️</div>
+            </div>
+          </div>
+          <div class="feature-box" data-feature="comfort">
+            <div class="feature-content">
+              <h3>Ultimate Comfort</h3>
+              <p>Premium materials and ergonomics</p>
+              <div class="feature-icon">💺</div>
+            </div>
+          </div>
+          <div class="feature-box" data-feature="connectivity">
+            <div class="feature-content">
+              <h3>Smart Connectivity</h3>
+              <p>Seamless digital experience</p>
+              <div class="feature-icon">📱</div>
+            </div>
+          </div>
+          <div class="feature-box" data-feature="design">
+            <div class="feature-content">
+              <h3>Iconic Design</h3>
+              <p>Timeless elegance and style</p>
+              <div class="feature-icon">🎨</div>
             </div>
           </div>
         </div>
