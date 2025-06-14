@@ -1,7 +1,11 @@
 header {
-  width: 100%;
-  height: 100px;
+  /* width: 100%;
+  height: 100px; */
   background-color: black;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between; */
 }
 
 
@@ -11,6 +15,8 @@ header ul {
   display: flex;
   align-items: center;
   text-align: center;
+  /* justify-content: space-between; */
+  padding: 10px;
 }
 
 header img {
@@ -80,7 +86,7 @@ header .nav-item {
 header div:first-of-type {
   font-family: "Zain";
   font-size: 30px;
-  animation: showup 10s infinite;
+  /* animation: showup 20s infinite; */
 }
 
 
@@ -163,7 +169,7 @@ header span {
   }
 
   30% {
-    width: 355px;
+    width: 320px;
   }
 
   80% {
@@ -437,6 +443,10 @@ header span {
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+
+/* .border2 img:nth-child(1) {
+  object-fit: contain;
+} */
 
 .border img,
 .border2 img,
@@ -1177,7 +1187,7 @@ header span {
 #experience-section {
   background: linear-gradient(135deg, #000000, #1a1a1a);
   padding: 100px 0;
-  min-height: 100vh;
+  max-height: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -1281,7 +1291,7 @@ header span {
 .timeline::before {
   content: '';
   position: absolute;
-  top: 50%;
+  top: 85%;
   left: 0;
   right: 0;
   height: 2px;
