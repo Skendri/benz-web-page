@@ -306,7 +306,7 @@ header span {
   .text-content {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     width: 75%;
-    height: 300px;
+    height: 200px;
     text-align: center;
     align-content: center;
     color: black;
@@ -319,6 +319,7 @@ header span {
       display: inline-block;
       opacity: 0;
       filter: blur(4px);
+      color: #45956b;
     }
 
     span:nth-child(1) {
@@ -1144,6 +1145,8 @@ header span {
 .glitch-text {
   position: relative;
   animation: glitch 1s infinite;
+  left: 444px;
+  font-size: 50px;
 }
 
 @keyframes glitch {
